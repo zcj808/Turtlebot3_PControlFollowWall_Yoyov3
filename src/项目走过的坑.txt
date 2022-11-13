@@ -1,0 +1,18 @@
+1、运行步骤：
+$ roslaunch ros_multitb3 single_tb3_house.launch
+$ roslaunch rrt_exploration single_tb3_exploration.launch
+
+2、接下来的思路：
+（1）反复尝试两个入口，目前宽入口成功率较高，记得调好eta等参数，还有teb_local_planner里面的速度限制参数，
+另一个窄入口目前成功率较低，可以尝试在assigner.py里面把靠小车很近的frontier point的代价设的很低，
+N函数是frontier point到小车的距离，可以设置阈值以调低info_gain项的reward，毕竟靠近的话自然info_gain低
+（2）调整相机高度，使得视野最好
+（3）设计基于pokemon的位姿估计算法，根据框中pokemon的框的四点，获取法向量和中心点二维位置，然后以此来设置小车为了检测到pokemon所需要的达到的位姿，然后用
+局部导航算法teb实现，同时将已拍照的pokemon位置记录，避免重复执行位姿算法
+
+3、已经尝试过的思路：
+更改filter.py,基本思路是将靠近墙壁(雷达数据)的frontier point去掉，但实际上这些点在距离远的时候具有导航作用，不应该这么草率处理。该处理的python是my_filterv2.py
+
+4、rrt_exploration理解：首先rrt_local_decector保证快速探索，因为小车走向frontier point同时reset rrt，可以减少算力，rrt_global_detector保证探索到每一个角落
+探索会产生很多detected points，聚类减少(filter)然后发送到assigner通过计算reward来选择最高的point执行teb导航算法。reward由信息半径和距离函数(导航函数)组成，
+frontier point的未知信息越大，距离越近，reward越大

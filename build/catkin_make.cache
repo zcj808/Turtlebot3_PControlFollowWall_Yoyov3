@@ -1,0 +1,2 @@
+darknet_ros/darknet_ros:darknet_ros/darknet_ros_msgs:pokemon_maze_plugin:pokemon_simulator:pokemon_vision:turtlebot3/turtlebot3:turtlebot3/turtlebot3_bringup:turtlebot3/turtlebot3_description:turtlebot3/turtlebot3_example:turtlebot3/turtlebot3_navigation:turtlebot3/turtlebot3_slam:turtlebot3/turtlebot3_teleop:turtlebot3_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/zcj/pokemon_ws/devel -DCMAKE_INSTALL_PREFIX=/home/zcj/pokemon_ws/install -G Unix Makefiles

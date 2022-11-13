@@ -1,0 +1,28 @@
+<launch>
+  <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="tb3_1_x_pos" default="-2.0"/>
+  <arg name="tb3_1_y_pos" default="2.62"/>
+  <arg name="tb3_1_z_pos" default="0.0"/>
+  <arg name="tb3_1_yaw_pos" default="-1.57"/>
+  <arg name="visual" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pokemon_maze_plugin)/worlds/pokemon_maze_cs405_animate.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+<!-- add "/tb3_1" to all nodes and topics in the group -->
+  <group ns = "/tb3_1"> 
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_1_burger_for_autorace.urdf.xacro" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="100.0" />
+      <param name="use_tf_static" type="bool" value="false" />
+      <param name="tf_prefix" value="tb3_1" />
+    </node>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model tb3_1 -x $(arg tb3_1_x_pos) -y $(arg tb3_1_y_pos) -z $(arg tb3_1_z_pos) -Y $(arg tb3_1_yaw_pos) -param robot_description" />
+  </group>
+</launch>

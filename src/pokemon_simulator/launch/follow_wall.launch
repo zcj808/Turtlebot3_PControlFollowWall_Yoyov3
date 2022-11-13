@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pokemon_simulator" type="my_follow_left_wall.py" name="my_follow_left_wall" output="screen" />
+  <node pkg="pokemon_simulator" type="my_follow_right_wall.py" name="my_follow_right_wall" output="screen" />
+</launch>

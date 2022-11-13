@@ -1,0 +1,26 @@
+yolo_model:
+
+  config_file:
+    name: pokemon.cfg
+  weight_file:
+    name: pokemon_40000.weights
+  threshold:
+    value: 0.3
+  detection_classes:
+    names:
+      - dog
+      - person
+      - cat
+      - tv
+      - car
+      - meatballs
+      - marinara sauce
+      - tomato soup
+      - chicken noodle soup
+      - french onion soup
+      - chicken breast
+      - ribs
+      - pulled pork
+      - hamburger
+      - cavity
+      - pokemon

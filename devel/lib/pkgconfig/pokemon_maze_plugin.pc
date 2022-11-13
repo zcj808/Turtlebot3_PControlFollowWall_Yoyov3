@@ -1,0 +1,8 @@
+prefix=/home/zcj/pokemon_ws/devel
+
+Name: pokemon_maze_plugin
+Description: Description of pokemon_maze_plugin
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

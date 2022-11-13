@@ -1,0 +1,8 @@
+prefix=/home/zcj/pokemon_ws/install
+
+Name: pokemon_vision
+Description: Description of pokemon_vision
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: cv_bridge geometry_msgs image_transport roscpp rospy sensor_msgs std_msgs message_runtime

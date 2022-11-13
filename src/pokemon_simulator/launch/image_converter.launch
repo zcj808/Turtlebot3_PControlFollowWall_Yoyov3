@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pokemon_vision" type="image_converter_1.py" name="image_converter_1" output="screen" />
+  <node pkg="pokemon_vision" type="image_converter_2.py" name="image_converter_2" output="screen" />
+</launch>
