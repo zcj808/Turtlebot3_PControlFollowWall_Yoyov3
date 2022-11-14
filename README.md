@@ -19,7 +19,9 @@ roslaunch pokemon_simulator pokemon_maze.launch
 
 ## Where is the key code?
 1. P controller for python is realized in `src/pokemon_simulator/scripts/my_follow_left_wall.py` or `src/pokemon_simulator/scripts/my_follow_right_wall.py`. And its effect is below:
-![image](https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image8.GIF){:height="100px" width="100px"} ![image](https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image9.GIF){:height="100px" width="100px"} ![image](https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image10.GIF){:height="100px" width="100px"}
+<img src="https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image8.GIF" width="100px">
+<img src="https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image9.GIF" width="100px">
+<img src="https://github.com/MrZZZZzzzz/Turtlebot3_PControlFollowWall_Yoyov3/blob/main/image10.GIF" width="100px">
 2. Yolov3 is realized in `src/darknet_ros`.
 
 ## Enjoy Yourself!
