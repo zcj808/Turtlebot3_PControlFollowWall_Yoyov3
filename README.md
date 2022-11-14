@@ -9,3 +9,15 @@ This project implements two turtlebot3s walking along a wall inside a maze while
 
 ## Configuration
 Assume that you know basic operations concerning workspace compilation and path configuration, etc. And the tutorial is here: http://wiki.ros.org/ROS/Tutorials
+
+## Running the Code
+One line command is all you need:
+'''
+roslaunch pokemon_simulator pokemon_maze.launch
+'''
+
+## Where is the key code?
+1. P controller for python is realized in 'src/pokemon_simulator/scripts/my_follow_left_wall.py' or 'src/pokemon_simulator/scripts/my_follow_right_wall.py'
+2. Yolov3 is realized in 'src/darknet_ros'
+
+## Enjoy Yourself!
